@@ -5,6 +5,7 @@ async function main() {
         const result = await service.obterPessoa('a')
         const nameFor = []
         const nameForIn = []
+        const nameForOf = []
         //usando for
         console.time('for')
         for (let i = 0; i <= result.results.length - 1; i++) {
@@ -21,7 +22,14 @@ async function main() {
         }
         console.timeEnd('for in')
 
-        console.log('nomes=>:', nameFor, nameForIn)
+        //usando for of
+        console.time('for of')
+        for (pessoa of result.results) {
+            nameForOf.push(pessoa.name)
+        }
+        console.timeEnd('for of')
+        console.log('nomes=>:', nameFor, nameForIn, nameForOf)
+
     } catch (error) {
         console.error('error', error)
     }

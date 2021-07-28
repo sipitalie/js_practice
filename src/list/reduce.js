@@ -21,7 +21,6 @@ async function main() {
         console.timeEnd('map')
 
         //use reduce
-
         console.time('reduce')
         const total = pesos.reduce((anterior, proximo) => anterior + proximo)
         console.timeEnd('reduce')
